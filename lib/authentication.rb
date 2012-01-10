@@ -1,9 +1,4 @@
 module Authentication
-
-
-
-puts "#########lib auth################"
-
   class Unauthorized < StandardError; end
 
   def self.included(base)

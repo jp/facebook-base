@@ -3,7 +3,25 @@
 </nav>
 
 
+
+
 <div>
+
+
+<%
+current_user.profile.events.each do |event|
+%>
+
+<%= event.to_json %><br>
+########################<br>
+	
+<%
+end
+%>
+
+
+
+
 <%
 current_user.profile.friends.each do |friend|
 %>
