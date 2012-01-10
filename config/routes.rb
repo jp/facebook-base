@@ -7,4 +7,6 @@ ResnFacebook::Application.routes.draw do
     get :callback, :to => :create
   end
 
+  resource :dashboard, :only => :show
+
 end

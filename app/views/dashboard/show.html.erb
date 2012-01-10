@@ -1,0 +1,31 @@
+<section class='dashboard'>
+  <h2>Hello <fb:name uid='<%= current_user.identifier %>' useyou='false'></fb:name>!</h2>
+</nav>
+
+
+<div>
+<%
+current_user.profile.friends.each do |friend|
+%>
+
+<%= friend.name %><br>
+<%= friend.identifier %><br>
+########################<br>
+	
+<%
+end
+%>
+
+</div>
+
+<script>
+$(function () {
+  $('#app_request').click(function () {
+    FB.ui({
+      method: 'apprequests',
+      message: 'You should learn more about this awesome game.',
+      data: 'tracking information for the user'
+    });
+  });
+});
+</script>
