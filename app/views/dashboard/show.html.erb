@@ -1,5 +1,5 @@
 <section class='dashboard'>
-  <h2>Hello <fb:name uid='<%= current_user.identifier %>' useyou='false'></fb:name>!</h2>
+  <h2>Hello <%= @fb_account.user.name %> !</h2>
 </nav>
 
 
@@ -8,31 +8,44 @@
 <div>
 
 
-<%
-current_user.profile.events.each do |event|
-%>
 
-<%= event.to_json %><br>
-########################<br>
-	
+
 <%
+
+@fb_account.user.friends.each do |friend|
+
+	%>
+
+	<%= friend.name %><br>
+	
+	<%
+
 end
 %>
 
 
 
-
 <%
-current_user.profile.friends.each do |friend|
-%>
 
-<%= friend.name %><br>
-<%= friend.identifier %><br>
-########################<br>
+
+=begin
+#retrieve events from facebook
+
+	current_user.profile.events.each do |event|
+	%>
+
+	<%= event.to_json %><br>
+	########################<br>
 	
-<%
-end
+	<%
+=end
+
+
 %>
+
+
+
+
 
 </div>
 

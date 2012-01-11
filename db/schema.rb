@@ -10,11 +10,57 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100805043508) do
+ActiveRecord::Schema.define(:version => 20120111031831) do
+
+  create_table "facebook_accounts", :force => true do |t|
+    t.string   "fb_id"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "facebook_accounts", ["user_id"], :name => "index_facebook_accounts_on_user_id"
+
+  create_table "facebook_nodes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "facebook_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "facebook_nodes", ["facebook_account_id"], :name => "index_facebook_nodes_on_facebook_account_id"
+  add_index "facebook_nodes", ["user_id"], :name => "index_facebook_nodes_on_user_id"
 
   create_table "facebooks", :force => true do |t|
     t.string   "identifier",   :limit => 20
     t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "positionInGame"
+    t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "video_unlocks", :force => true do |t|
+    t.integer  "video_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "video_unlocks", ["user_id"], :name => "index_video_unlocks_on_user_id"
+  add_index "video_unlocks", ["video_id"], :name => "index_video_unlocks_on_video_id"
+
+  create_table "videos", :force => true do |t|
+    t.string   "name"
+    t.boolean  "locked"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

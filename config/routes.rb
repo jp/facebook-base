@@ -9,4 +9,8 @@ ResnFacebook::Application.routes.draw do
 
   resource :dashboard, :only => :show
 
+  match "/user" => "users#details"
+  match "/user/position/:pos" => "users#updatePosition"
+  match "/user/friends" => "users#friends"
+
 end

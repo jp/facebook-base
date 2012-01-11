@@ -1,3 +1,44 @@
 rails generate controller home index
 
 
+rails generate model User name:string location:string positionInGame:string access_token:string
+rails generate model FacebookAccount fb_id:string name:string user:references
+rails generate model FacebookNode user:references facebook_account:references
+rails generate model Video name:string locked:boolean
+rails generate model VideoUnlock video:references user:references
+
+
+# rails generate model Event fb_event_id:string user:references
+# rails generate model EventAnswer event:references user:references attend:bool maybe:bool 
+
+
+
+Do not invite users to event : we can directly force them to answer if they are going to attend an event.
+=> The good point is that he user will receive updates on the event if he answers "attend" or "maybe"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+POST https://graph.facebook.com/+EVENT_ID+/invited/+USER_ID
+
+Invite a user to an event. Returns true if the request is successful.
+
+
+
+invite a user to an event
+https://api.facebook.com/method/events.invite?eid=683618123&uids=683618123&access_token=AAADF30WI0dsBAIZB792U0OUXeVBvq0Kr07fypG5VcI6Evhzgr8LgTwjs5OFrw2H6i7LKzvqjsHWiv8rZAsOuPocdc9mEf7xiff8xftwgZDZD&format=json
+
+
