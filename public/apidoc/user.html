@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>user</title>
+
+    <style>
+      body {
+        line-height: 1.5em;
+        color:#484848;
+      }
+
+      ul, ol {
+        margin-bottom: 0.8em;
+      }
+
+      li {
+        padding-left: 10px;
+        margin-right: 10px;
+      }
+
+      #resources {
+
+      }
+
+      h1, h2, h3 {
+        padding-top: 8px;
+        padding-bottom: 2px;
+      }
+
+      #method {
+        padding: 15px 30px;
+        border-top:1px solid #ddd;
+      }
+
+      #http_verb {
+        color:#ff6600;
+        width:200px;
+        margin-right:20px;'
+      }
+
+      .description{
+        font-size: 1.4em;
+        color:#262626;
+      }
+      .code {
+          font-family: monospace;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="content">
+
+      
+        <div id="navigation">
+          <ul class="main">
+            <li><a href="/apidoc/index.html">&laquo; Back to index</a></li>
+          </ul>
+        </div>
+
+        <hr />
+
+        
+
+        
+          <div id="method">
+  
+  
+  <p class='description'><strong>Description:</strong> Display the details of the user object in database
+</p>
+
+  <h2><span id='http_verb'>GET</span>/user</h2>
+  
+  
+    <strong>Access:</strong> AUTHENTICATED USERS<br />
+  
+
+  
+    <strong>Return:</strong>
+    [JSON|XML] - User details
+    <br />
+  
+
+    
+    <strong>Parameters:</strong>
+    <ul>
+      
+    </ul>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+        
+          <div id="method">
+  
+  
+  <p class='description'><strong>Description:</strong> Retrieve the list of friends who already used the application
+</p>
+
+  <h2><span id='http_verb'>GET</span>/user/friends</h2>
+  
+  
+    <strong>Access:</strong> AUTHENTICATED USERS<br />
+  
+
+  
+    <strong>Return:</strong>
+    [JSON|XML] - List of friends
+    <br />
+  
+
+    
+    <strong>Parameters:</strong>
+    <ul>
+      
+    </ul>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+        
+          <div id="method">
+  
+  
+  <p class='description'><strong>Description:</strong> et a list of projects. This method uses pagination. If you want to retreive project 1-10 for example:
+projects?page=1&per_page=10.0
+</p>
+
+  <h2><span id='http_verb'>POST</span>/user/position</h2>
+  
+  
+    <strong>Access:</strong> AUTHENTICATED USERS<br />
+  
+
+  
+    <strong>Return:</strong>
+    [JSON|XML] - some project  
+    <br />
+  
+
+    
+    <strong>Parameters:</strong>
+    <ul>
+      <li>page:int - the page</li><li>per_page:int - max items per page</li>
+    </ul>
+  
+
+  
+
+  
+
+  
+
+</div>
+
+        
+      
+
+    </div>
+  </body>
+</html>

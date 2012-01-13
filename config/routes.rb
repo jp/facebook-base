@@ -1,6 +1,8 @@
 ResnFacebook::Application.routes.draw do
   get "home/index"
 
+
+
   root :to => "home#index"
   
   resource :facebook, :except => :create do
@@ -12,5 +14,10 @@ ResnFacebook::Application.routes.draw do
   match "/user" => "users#details"
   match "/user/position/:pos" => "users#updatePosition"
   match "/user/friends" => "users#friends"
+
+  match "/event/:id/attending" => "events#attending"
+  match "/event/:id/maybe" => "events#maybe"
+  match "/event/:id/declined" => "events#declined"
+
 
 end

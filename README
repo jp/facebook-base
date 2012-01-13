@@ -1,3 +1,26 @@
+
+
+
+#retrieve a public event
+FbGraph::Event.fetch('291316194251928')
+#attend to a public event
+e.attending!(:access_token => User.last.access_token)
+
+
+
+user = FbGraph::User.me(User.last.access_token)
+
+
+
+
+
+
+
+
+
+rails generate model Event user:references fb_id:string name:string description:string updated_time:time start_time:time end_time:time location:string
+
+
 rails generate controller home index
 
 

@@ -8,7 +8,7 @@ base: &base
   
 production:
   <<: *base
-  database: hennessy
+  database: news
   username: root
   password: 
 

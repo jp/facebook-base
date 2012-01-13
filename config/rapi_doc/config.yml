@@ -1,0 +1,7 @@
+user:
+  location: "/user"
+  controller_name: "users_controller.rb"
+events:
+  location: "/event"
+  controller_name: "events_controller.rb"
+

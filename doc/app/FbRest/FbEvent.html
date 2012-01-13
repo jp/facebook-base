@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class FbRest::FbEvent - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/fb_rest.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-invite">#invite</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Authentication.html">Authentication</a>
+  
+    <li><a href="../Authentication/ControllerMethods.html">Authentication::ControllerMethods</a>
+  
+    <li><a href="../Authentication/HelperMethods.html">Authentication::HelperMethods</a>
+  
+    <li><a href="../Authentication/Unauthorized.html">Authentication::Unauthorized</a>
+  
+    <li><a href="../FbRest.html">FbRest</a>
+  
+    <li><a href="../FbRest/FbEvent.html">FbRest::FbEvent</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../DashboardController.html">DashboardController</a>
+  
+    <li><a href="../Facebook.html">Facebook</a>
+  
+    <li><a href="../FacebookAccount.html">FacebookAccount</a>
+  
+    <li><a href="../FacebookNode.html">FacebookNode</a>
+  
+    <li><a href="../FacebooksController.html">FacebooksController</a>
+  
+    <li><a href="../HomeController.html">HomeController</a>
+  
+    <li><a href="../HomeHelper.html">HomeHelper</a>
+  
+    <li><a href="../User.html">User</a>
+  
+    <li><a href="../UsersController.html">UsersController</a>
+  
+    <li><a href="../Video.html">Video</a>
+  
+    <li><a href="../VideoUnlock.html">VideoUnlock</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FbRest::FbEvent</h1>
+
+  <div id="description" class="description">
+    
+<p>fb_graph if only supporting the FB Graph API, not the deprecated REST API
+At this date, the Event invitation has not beed supported in the <a
+href="../Facebook.html">Facebook</a> Graph API We will have to use the REST
+API in order to send invitation to users</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-invite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invite</span><span
+            class="method-args">(event_id,user_ids,access_token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invite-source">
+            <pre><span class="ruby-comment"># File lib/fb_rest.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invite</span>(<span class="ruby-identifier">event_id</span>,<span class="ruby-identifier">user_ids</span>,<span class="ruby-identifier">access_token</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'open-uri'</span>
+
+
+  <span class="ruby-identifier">url</span> = <span class="ruby-string">&quot;https://api.facebook.com/method/events.invite?eid=&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">event_id</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;&amp;uids=&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">user_ids</span>.<span class="ruby-identifier">to_s</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;&amp;access_token=&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">access_token</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;&amp;format=json&quot;</span>
+  <span class="ruby-identifier">content</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get_response</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">url</span>))
+
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invite-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

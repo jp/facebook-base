@@ -28,6 +28,7 @@ end
 <%
 
 
+=begin
 #retrieve events from facebook
 
 	current_user.profile.events.each do |event|
@@ -37,7 +38,7 @@ end
 	########################<br>
 	
 	<%
-end
+=end
 
 
 %>

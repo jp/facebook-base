@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+app/controllers/dashboard_controller.rb~
+app/controllers/users_controller.rb~
+app/models/user.rb~
+config/routes.rb~

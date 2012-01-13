@@ -10,7 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120111031831) do
+ActiveRecord::Schema.define(:version => 20120112220523) do
+
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "fb_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "updated_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "location"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "facebook_accounts", :force => true do |t|
     t.string   "fb_id"
@@ -46,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20120111031831) do
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
   create_table "video_unlocks", :force => true do |t|

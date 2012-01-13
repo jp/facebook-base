@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  fb_id: MyString
+  name: MyString
+  description: MyString
+  updated_time: 2012-01-13 11:05:23
+  start_time: 2012-01-13 11:05:23
+  end_time: 2012-01-13 11:05:23
+  location: MyString
+
+two:
+  user: 
+  fb_id: MyString
+  name: MyString
+  description: MyString
+  updated_time: 2012-01-13 11:05:23
+  start_time: 2012-01-13 11:05:23
+  end_time: 2012-01-13 11:05:23
+  location: MyString

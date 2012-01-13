@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%= @name || 'Home' %></title>
+
+    <style>
+      body {
+        line-height: 1.5em;
+        color:#484848;
+      }
+
+      ul, ol {
+        margin-bottom: 0.8em;
+      }
+
+      li {
+        padding-left: 10px;
+        margin-right: 10px;
+      }
+
+      #resources {
+
+      }
+
+      h1, h2, h3 {
+        padding-top: 8px;
+        padding-bottom: 2px;
+      }
+
+      #method {
+        padding: 15px 30px;
+        border-top:1px solid #ddd;
+      }
+
+      #http_verb {
+        color:#ff6600;
+        width:200px;
+        margin-right:20px;'
+      }
+
+      .description{
+        font-size: 1.4em;
+        color:#262626;
+      }
+      .code {
+          font-family: monospace;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="content">
+
+      <% if @page_type == 'index' %>
+        <div id="introduction">
+          <!-- documentation intro -->
+        </div>
+
+        <h2>Resources</h2>
+        <div id="resources">
+          <ul>
+          <% @resources.each do |r| %>
+            <li>Resource:  <a href="/apidoc/<%=r.name %>.html"><%=r.resource_location %></a></li>
+          <% end %>
+          </ul>
+        </div>
+      <% else %>
+        <div id="navigation">
+          <ul class="main">
+            <li><a href="/apidoc/index.html">&laquo; Back to index</a></li>
+          </ul>
+        </div>
+
+        <hr />
+
+        <%=@header_code %>
+
+        <% @method_codes.each do |mc| %>
+          <%=mc %>
+        <% end %>
+      <% end %>
+
+    </div>
+  </body>
+</html>
